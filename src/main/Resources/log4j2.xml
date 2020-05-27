@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration debug="false" >
+    <Appenders>
+        <RollingFile name="RollingFile" filename="logs/AutoTool.log"
+                     filepattern="logs//%d{YYYYMMddHHmmss}-AutoTool.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"  />
+            <Policies>
+                <SizeBasedTriggeringPolicy size="100 MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="20" />
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <root level="Info">
+            <appender-ref ref="RollingFile" />
+        </root>
+    </Loggers>
+</configuration>
